@@ -30,6 +30,7 @@ nav a{
 	text-decoration: none;
 	color: black;
 	padding: 10px;
+	text-align: center;
 }
 nav a:hover{
 	color:orange;
@@ -136,10 +137,17 @@ nav a:hover{
 	background-color: orange;
 	border-radius: 10px;
 }
+.boxes:hover {
+	background-color: #fff;
+}
 .boxes p{
 	text-align: center;
 	color: white;
 	font-style: normal;
+}
+.boxes:hover p{
+	color: orange;
+	user-select: none;
 }
 .box-header{
 	font-family: 'Tangerine', cursive;
@@ -307,10 +315,27 @@ h3{
   width: 30%;
   padding: 0;
   background-color: transparent;
+  position: relative;
 }
 .box:hover{
   background: lightgray;
   cursor: pointer;
+}
+.box:hover img {
+	filter: blur(3px);
+}
+.box__span {
+	display:none;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+	color: #ffff;
+	border-radius: 3px;
+	background-color: rgba(0,0,0,.3);
+}
+.box:hover .box__span {
+	display: block;
 }
 .box img{
   width: 100%;
@@ -525,12 +550,10 @@ footer p {
 @media only screen and (max-width: 1210px) {
 #myLinks{display:none;
 align-items:center;
-padding-top:55px;
 }
   #myLinks a{
 	display:flex;
 	flex-direction:column;
-	text-align:right;
 	
 	
 }
